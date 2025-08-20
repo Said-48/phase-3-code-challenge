@@ -115,24 +115,24 @@ author1 = Author("Said")
 author2 = Author("Ali")
 
 # magazines
-mag1 = Magazine("TechNow", "Technology")
+mag1 = Magazine("Siasa", "Politics")
 mag2 = Magazine("HealthPlus", "Health")
 
 # ONE TO MANY (one author -> many articles)
-author1.add_article(mag1, "The Future of AI")
-author1.add_article(mag1, "Quantum Computing Basics")
+author1.add_article(mag1, "Election coverage")
+author1.add_article(mag1, "Political Power")
 
-# MANY TO MANY (many authors <-> many magazines)
-author2.add_article(mag1, "AI in Everyday Life")
+# MANY TO MANY (many authors to many magazines)
+author2.add_article(mag1, "Political Relationship")
 author2.add_article(mag2, "Mental Wellness")
 
 
-# One-to-many: one author -> many articles
+# One-to-many: one author to many articles
 print("Articles by Said:", [a.title for a in author1.articles()])
 
-# One-to-many: one magazine -> many articles
+# One-to-many: one magazine to many articles
 print("Articles in TechNow:", [a.title for a in mag1.articles()])
 
-# Many-to-many: authors <-> magazines (through Article)
-print("Magazines Said has written for:", [m.name for m in author1.magazines()])
-print("Contributors in TechNow:", [a.name for a in mag1.contributors()])
+# Many-to-many: authors to magazines (through Article)
+print("Magazines Said has written:", [m.name for m in author1.magazines()])
+
